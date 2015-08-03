@@ -1,0 +1,15 @@
+import random, string
+
+def create_key(num=200, dig=5):
+    length = dig * 4
+    l = ''
+    for word in string.ascii_uppercase,string.octdigits:
+        l += word
+
+    for m in range(num):
+        key = ''
+        for n in range(length):
+            key += l[random.randint(0,len(l)-1)]
+            if n%4==3 and n!=length-1:
+                key += '-'
+        print(key)
